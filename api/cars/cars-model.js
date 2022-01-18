@@ -1,11 +1,11 @@
 const db = require('../../data/db-config')
 
 const getAll = () => {
-  db('cars')
+  return db('cars')
 }
 
 const getById = (id) => {
-  db('cars').where({ id: id })
+  return db('cars').where({ id: id })
 }
 
 const create = () => {
