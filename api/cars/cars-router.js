@@ -21,11 +21,9 @@ router.get('/:id', mw.checkCarId, async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', mw.checkCarPayload, mw.checkVinNumberValid, (req, res, next) => {
   try {
-    // const allCars = await Cars.getAll()
-    // res.json(allCars)
-    res.send({ message: 'connected post!' })
+    res.json('posting new car')
   } catch (err) {
     next(err)
   }
